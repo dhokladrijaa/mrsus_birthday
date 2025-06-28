@@ -1216,8 +1216,8 @@ body {
 }
 .floating-photo {
   position: absolute;
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 2px 8px #e5a2c8;
