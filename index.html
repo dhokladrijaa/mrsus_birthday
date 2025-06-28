@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 MR SUS का TWENTIETH 💖</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background sparkles and hearts -->
+    <div class="bg-sparkles" id="bgSparkles"></div>
+    
+    <!-- Start Screen -->
+    <div class="popup-window" id="startScreen">
+        <div class="popup-header">
+            <div class="popup-title">💖 MR SUS का TWENTIETH 💖</div>
+            <div class="popup-controls">
+                <button class="popup-btn close-btn">×</button>
+            </div>
+        </div>
+        <div class="popup-body">
+            <div class="start-content">
+                <h1 class="pixel-title">Welcome, Sachin!</h1>
+                <p class="start-subtitle">happiest birthday to my handsome baby boy </p>
+                <button class="btn btn--primary pixel-btn" id="startGameBtn">
+                    Start Your (Sus)Adventure
+                </button>
+                <button class="music-toggle" id="musicToggle">
+                    🎵 Music: <span id="musicStatus">ON</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Area -->
+    <div class="game-container hidden" id="gameArea">
+        <div class="game-header">
+            <h2 class="pixel-title small">Collect All Tokens By Clicking On Them</h2>
+            <div class="progress">
+                <span id="progressText">0/5 collected</span>
+            </div>
+        </div>
+        
+        <div class="game-world">
+            <!-- Floating hearts -->
+            <div class="floating-heart" style="left: 10%; animation-delay: 0s;">💖</div>
+            <div class="floating-heart" style="left: 30%; animation-delay: 1s;">💕</div>
+            <div class="floating-heart" style="left: 70%; animation-delay: 2s;">💝</div>
+            <div class="floating-heart" style="left: 90%; animation-delay: 0.5s;">💗</div>
+            
+            <!-- Collectibles -->
+            <div class="collectible grayscale" id="dhokla" data-id="dhokla" data-name="Dhokla" style="top: 20%; left: 15%;">
+                <div class="collectible-emoji">🥙</div>
+                <div class="collectible-name">Dhokla</div>
+            </div>
+            
+            <div class="collectible grayscale" id="suitcase" data-id="suitcase" data-name="Travel Bag" style="top: 35%; left: 75%;">
+                <div class="collectible-emoji">🧳</div>
+                <div class="collectible-name">Travel Bag</div>
+            </div>
+            
+            <div class="collectible grayscale" id="lion" data-id="lion" data-name="Sher" style="top: 55%; left: 25%;">
+                <div class="collectible-emoji">🦁</div>
+                <div class="collectible-name">Sher</div>
+            </div>
+            
+            <div class="collectible grayscale" id="cigarette" data-id="cigarette" data-name="Chhotu sa break" style="top: 70%; left: 65%;">
+                <div class="collectible-emoji">🚬</div>
+                <div class="collectible-name">Chhotu sa break</div>
+            </div>
+            
+            <div class="collectible grayscale" id="vk" data-id="vk" data-name="VK ke peechhe" style="top: 45%; left: 50%;">
+                <div class="collectible-emoji">🏠</div>
+                <div class="collectible-name">VK ke peechhe</div>
+            </div>
+        </div>
+        
+        <div class="dialogue-box">
+            <p id="dialogueText">Welcome, Mr. Sus! Your Dhokla made you a cozy pixel world.</p>
+        </div>
+    </div>
+
+    <!-- Finale Screen -->
+    <div class="finale-container hidden" id="finaleArea">
+        <img src="him1.jpg" class="floating-photo" style="top:10%; left:20%; animation-delay:0s;">
+<img src="him2.jpg" class="floating-photo" style="top:50%; left:70%; animation-delay:1s;">
+<img src="him3.jpg" class="floating-photo" style="top:70%; left:25%; animation-delay:2s;">
+
+
+        <div class="finale-content">
+            <div class="pixel-couple">
+                <div class="couple-sprite"> <img src="us-photo.png" alt="Us Together" style="width:170px; height:170px; border-radius:12px; object-fit:cover; margin-bottom:14px;"></div>
+                <div class="finale-hearts">
+                    <span class="finale-heart" style="animation-delay: 0s;">💖</span>
+                    <span class="finale-heart" style="animation-delay: 0.5s;">💕</span>
+                    <span class="finale-heart" style="animation-delay: 1s;">💝</span>
+                    <span class="finale-heart" style="animation-delay: 1.5s;">💗</span>
+                </div>
+            </div>
+            
+            <div class="love-message">
+                <p class="final-text">Keep being as great & amazing as you are. Don’t ever trade it for noise sher 💖 (also get well soon, aise bike se chot mat lagwa liya karo 😡)</p>
+                <div class="birthday-gift" id="birthdayGift">
+                    <div class="gift-emoji">🎁</div>
+                    <div class="gift-text">Click me!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Birthday Message -->
+    <div class="birthday-popup hidden" id="birthdayPopup">
+        <div class="birthday-content">
+            <h1 class="birthday-title">HAPPY BIRTHDAY SACHIN</h1>
+            <p class="birthday-subtitle">I love you 💖</p>
+            <p class="birthday-signature">— Your Dhokla</p>
+        </div>
+        <button id="replay-btn" style="margin-top:24px;">🔄 Reload page to replay</button>
+    </div>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- Audio element -->
+    <audio id="gameMusic" loop>
+        <source src="/music/love_theme.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="app.js"></script>
+</body>
+</html>
